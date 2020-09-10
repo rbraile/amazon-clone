@@ -7,7 +7,7 @@ import { useStateValue } from '../../context/StateProvider';
 import { auth } from '../../firebase';
 
 const Header = () => {
-  const [{ basket, user }, dispatch] = useStateValue();
+  const [{ basket, user }] = useStateValue();
   const handleAuth = e => {
     e.preventDefault();
     auth.signOut();
@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <div className="header">
       <Link to="/">
-        <img className="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />
+        <img className="header__logo" alt="logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" />
       </Link>
       <div className="header__search">
           <input type="text" />

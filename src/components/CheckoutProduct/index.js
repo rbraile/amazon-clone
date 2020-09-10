@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import StarIcon from '@material-ui/icons/Star';
 import { useStateValue } from '../../context/StateProvider';
 import './checkoutProduct.css'
 
-const CheckoutProduct = ({ id, title, image, rating, price }) => {
+const CheckoutProduct = forwardRef(({ id, title, image, rating, price }, ref) => {
   const [{ basket }, dispatch] = useStateValue();
   const removeToBasket = () => {
     dispatch({
@@ -12,7 +12,7 @@ const CheckoutProduct = ({ id, title, image, rating, price }) => {
     });
   }
   return (
-    <div className="checkoutProduct">
+    <div className="checkoutProduct" ref={ref}>
       <div className="checkoutProduct__image">
         <img src={image} alt="checkoutProduct__img" />
       </div>
@@ -35,6 +35,6 @@ const CheckoutProduct = ({ id, title, image, rating, price }) => {
       </div>
     </div>
   )
-}
+})
 
 export default CheckoutProduct
