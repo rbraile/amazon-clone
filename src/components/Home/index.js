@@ -52,28 +52,7 @@ const Home = () => {
 
       <div className="home__row">
         <Product
-          id="12326"
-          title="Apple Watch Series 3 (GPS, 42mm) - Space Grey Aluminium Case with Black Sport Band"
-          price={20}
-          rating={5}
-          image="https://images-eu.ssl-images-amazon.com/images/I/41RLXO5JUhL._AC_SX368_.jpg"
-        />
-        <Product
           id="12327"
-          title="Apple Watch Series 3 (GPS, 42mm) - Space Grey Aluminium Case with Black Sport Band"
-          price={20}
-          rating={5}
-          image="https://images-eu.ssl-images-amazon.com/images/I/41RLXO5JUhL._AC_SX368_.jpg"
-        />
-        <Product
-          id="12328"
-          title="Apple Watch Series 3 (GPS, 42mm) - Space Grey Aluminium Case with Black Sport Band"
-          price={20}
-          rating={5}
-          image="https://images-eu.ssl-images-amazon.com/images/I/41RLXO5JUhL._AC_SX368_.jpg"
-        />
-        <Product
-          id="12329"
           title="Apple Watch Series 3 (GPS, 42mm) - Space Grey Aluminium Case with Black Sport Band"
           price={20}
           rating={5}

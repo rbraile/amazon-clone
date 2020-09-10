@@ -1,53 +1,43 @@
 export const initialState = {
   basket: [],
   user: null,
-  categories: ["Phones", "Laptops"]
 }
 
-export const getCartTotal = (cart) =>
-  cart?.reduce((amount, item) => item.price + amount, 0)
+export const getBasketTotal = (basket) => {
+    return basket?.reduce((amount, item) => item.price + amount, 0)
+}
 
 const reducer = (state, action) => {
-    console.log(action);
-
   switch (action.type) {
-      case 'ADD_TO_BASKET':
-          // Logic for adding item to cart
-          return {
-              ...state,
-              basket: [...state.basket, action.item]
-          }
-      case 'REMOVE_FROM_CART':
-          // Logic for removing item from cart
-          /* 
-          let newCart = [...state.cart]
-          const index = state.cart.findIndex(
-              item => item.id === action.payload
-          )
-          
-          if(index>=0)
-              newCart.splice(index,1)
-          else
-              console.warn(`can't remove as it's not available`)
-          return {
-              ...state, 
-              cart: newCart
-          }
-          */
+    case 'ADD_TO_BASKET':
+        return {
+            ...state,
+            basket: [...state.basket, action.payload.item]
+        }
+    case 'REMOVE_FROM_BASKET':
+      const index = state.basket.findIndex(
+        item => item.id === action.payload
+      )
 
+      let newBasket = [...state.basket];
+      if(index>=0) {
+        newBasket.splice(index,1)
+      } else {
+        console.warn(`can't remove as it's not available`)
+      }
 
-          return {
-              ...state,
-              basket: state.basket.filter(item => item.id !== action.payload)
-          }
+      return {
+        ...state, 
+        basket: newBasket
+      }
 
-      case 'SET_USER':
-          return {
-              ...state,
-              user: action.user
-          }
-      default:
-          return state
+    case 'SET_USER':
+        return {
+            ...state,
+            user: action.payload.user
+        }
+    default:
+      return state
   }
 }
 

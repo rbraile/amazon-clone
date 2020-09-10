@@ -8,12 +8,14 @@ const Product = ({ id, title, image, rating, price }) => {
   const addToBasket = () => {
     dispatch({
       type: "ADD_TO_BASKET",
-      item: {
-        id, 
-        title,
-        image,
-        price,
-        rating
+      payload: {
+        item: {
+          id, 
+          title,
+          image,
+          price,
+          rating
+        }
       }
     });
   }

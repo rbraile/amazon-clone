@@ -1,0 +1,11 @@
+.checkoutProduct {
+  display: flex;
+}
+
+.checkoutProduct__image {
+  width: 150px;
+}
+      
+.checkoutProduct__image img { 
+  max-width: 100%;
+}
